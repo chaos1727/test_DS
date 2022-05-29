@@ -2,7 +2,7 @@ import numpy as np
 
 number = np.random.randint(0, 101)  # компьютер загадывает случайное число в пределах 0...100
 
-def randomize(arg):                 # функция отгадывания числа 
+def randomize(arg):                 # функция отгадывания числа, принимает на вход число от 0 до 100 и пытается его угадать
     first_number = 0                # самое минимальное число
     last_number = 100               # самое максимальное число
     mid_number = last_number // 2   # число посередине между минимальныи и максимальным числом
@@ -18,6 +18,4 @@ def randomize(arg):                 # функция отгадывания чи
             first_number = mid_number
             mid_number = (first_number + last_number) // 2 
     
-
 print(randomize(number))            # вызов функции отгадывания числа, возвращает кортеж (отгаданое число, использованое количество попыток)
-        
