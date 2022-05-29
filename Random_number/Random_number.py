@@ -1,14 +1,14 @@
 import numpy as np
 
-number = np.random.randint(0, 101)
+number = np.random.randint(0, 101)  # компьютер загадывает случайное число в пределах 0...100
 
-def randomize(arg):
-    first_number = 0
-    last_number = 100
-    mid_number = last_number // 2
-    count = 0
-    while count < 20:
-        count += 1
+def randomize(arg):                 # функция отгадывания числа 
+    first_number = 0                # самое минимальное число
+    last_number = 100               # самое максимальное число
+    mid_number = last_number // 2   # число посередине между минимальныи и максимальным числом
+    count = 0                       # количество попыток
+    while count < 21:               # цикл, не более 20 попыток
+        count += 1                  # увеличение счетчика
         if mid_number == arg:
             return arg, count
         elif mid_number > arg:
@@ -19,5 +19,5 @@ def randomize(arg):
             mid_number = (first_number + last_number) // 2 
     
 
-print(randomize(number))
+print(randomize(number))            # вызов функции отгадывания числа, возвращает кортеж (отгаданое число, использованое количество попыток)
         
